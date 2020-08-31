@@ -30,7 +30,11 @@ const removeNote = function(title){
 
     const notes = loadNotes()
 
-    c
+    const notesToKeep = notes.filter(function(note){
+        return note.title != title
+    })
+
+    saveNotes(notesToKeep)
 }
 
 const saveNotes = function(notes) {
